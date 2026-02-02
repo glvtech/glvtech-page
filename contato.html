@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GLVTECH | Contato</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul: #1e88e5;
+      --preto: #111;
+      --cinza: #f2f2f2;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: var(--cinza);
+      color: var(--preto);
+    }
+
+    header {
+      background: #fff;
+      padding: 40px 20px 25px;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 130px;
+      margin-bottom: 15px;
+    }
+
+    .menu {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--preto);
+      padding-bottom: 4px;
+    }
+
+    .menu a.active {
+      color: var(--azul);
+      border-bottom: 2px solid var(--azul);
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--azul);
+      margin-bottom: 30px;
+    }
+
+    form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      margin-top: 15px;
+    }
+
+    select, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      background: var(--azul);
+      color: #fff;
+      border: none;
+      padding: 14px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: #1565c0;
+      transform: scale(1.03);
+    }
+
+    footer {
+      background: var(--preto);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="GLVTECH Logo">
+  <nav class="menu">
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfólio</a>
+    <a href="contato.html" class="active">Contato</a>
+  </nav>
+</header>
+
+<section>
+  <h2>Solicitar Orçamento</h2>
+
+  <form onsubmit="enviarWhatsApp(event)">
+    <label for="servico">Tipo de serviço</label>
+    <select id="servico" required>
+      <option value="">Selecione um serviço</option>
+      <option value="Montagem de PC">Montagem de PC</option>
+      <option value="Manutenção Preventiva">Manutenção Preventiva</option>
+      <option value="Manutenção Corretiva">Manutenção Corretiva</option>
+      <option value="Outro">Outro</option>
+    </select>
+
+    <label for="descricao">Descreva sua necessidade</label>
+    <textarea id="descricao" rows="5" placeholder="Explique o que você precisa..." required></textarea>
+
+    <button type="submit">Enviar para WhatsApp</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 GLVTECH — Todos os direitos reservados
+</footer>
+
+<script>
+  function enviarWhatsApp(e) {
+    e.preventDefault();
+    const servico = document.getElementById('servico').value;
+    const descricao = document.getElementById('descricao').value;
+
+    const mensagem = `Olá! Gostaria de um orçamento.%0A%0AServiço: ${servico}%0ADescrição: ${descricao}`;
+    const url = `https://wa.me/5511940857403?text=${mensagem}`;
+
+    window.open(url, '_blank');
+  }
+</script>
+
+</body>
+</html>
