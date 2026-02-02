@@ -11,6 +11,16 @@
       --preto: #111;
       --cinza: #f2f2f2;
       --cinza-escuro: #444;
+      --bg: #f2f2f2;
+      --card: #ffffff;
+      --texto: #111;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --card: #1e1e1e;
+      --texto: #f5f5f5;
+      --cinza-escuro: #cccccc;
     }
 
     * {
@@ -21,15 +31,17 @@
     }
 
     body {
-      background: var(--cinza);
-      color: var(--preto);
+      background: var(--bg);
+      color: var(--texto);
       line-height: 1.6;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     header {
-      background: #fff;
+      background: var(--card);
       padding: 40px 20px 25px;
       text-align: center;
+      position: relative;
     }
 
     header img {
@@ -123,6 +135,8 @@
     <a href="portfolio.html">Portfólio</a>
     <a href="contato.html">Contato</a>
   </nav>
+
+  <button class="toggle-theme" onclick="toggleTheme()">🌙</button>
 </header>
 
 <section class="sobre">
@@ -154,5 +168,20 @@
   © 2026 GLVTECH — Todos os direitos reservados
 </footer>
 
+<script>
+  function toggleTheme() {
+    document.body.classList.toggle('dark');
+    const btn = document.querySelector('.toggle-theme');
+    btn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+  }
+
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark');
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('.toggle-theme').textContent = '☀️';
+    });
+  }
+</script>
 </body>
 </html>
