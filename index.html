@@ -102,9 +102,21 @@
       background: #000;
     }
 
-    .item-portfolio p {
-      padding: 10px;
-      font-weight: 600;
+    .item-portfolio p { display: none; }
+
+    .specs {
+      list-style: none;
+      padding: 12px 14px 16px;
+      text-align: left;
+      font-size: 0.9rem;
+      color: var(--preto);
+    }
+
+    .specs li {
+      margin-bottom: 6px;
+    }
+
+    .specs strong {
       color: var(--azul);
     }
 
@@ -179,12 +191,29 @@
     <div class="portfolio">
       <div class="item-portfolio">
         <img src="imagens/pcgamer1.jpeg" alt="PC Gamer montado pela GLVTECH">
-        <p>PC Gamer</p>
+        <ul class="specs">
+          <li><strong>CPU:</strong> AMD Ryzen 5 5500</li>
+          <li><strong>GPU:</strong> RTX 3060 12GB Gainward Ghost</li>
+          <li><strong>Placa-mãe:</strong> MSI A520M-A PRO</li>
+          <li><strong>Memória:</strong> 2x16GB Crucial 2666MHz</li>
+          <li><strong>Armazenamento:</strong> SSD NVMe 256GB</li>
+          <li><strong>Fonte:</strong> Corsair CV650</li>
+          <li><strong>Gabinete:</strong> Hayom Aquario</li>
+        </ul>
       </div>
 
       <div class="item-portfolio">
         <img src="imagens/pcgamer2.jpeg" alt="PC Gamer montado pela GLVTECH">
-        <p>PC Gamer</p>
+        <ul class="specs">
+          <li><strong>CPU:</strong> AMD Ryzen 7 9700X</li>
+          <li><strong>GPU:</strong> ASRock Steel Legend Radeon RX 9070 XT</li>
+          <li><strong>Placa-mãe:</strong> ASRock X870 Pro RS WiFi</li>
+          <li><strong>Memória:</strong> 2x16GB Kingston Fury Renegade 8000 MT/s</li>
+          <li><strong>Armazenamento:</strong> Kingston NV3 2TB</li>
+          <li><strong>Fonte:</strong> Cooler Master MWE Gold 850 V3 (850W)</li>
+          <li><strong>Gabinete:</strong> Rise Mode Galaxy Standard V2</li>
+          <li><strong>Water Cooler:</strong> Aura Ice 360mm</li>
+        </ul>
       </div>
     </div>
     </div>
