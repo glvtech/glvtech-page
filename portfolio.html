@@ -28,27 +28,11 @@
       background: #fff;
       padding: 40px 20px 25px;
       text-align: center;
-      position: relative;
     }
 
-    .toggle-theme {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: none;
-      border: 2px solid var(--azul);
-      color: var(--azul);
-      border-radius: 50%;
-      width: 42px;
-      height: 42px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .toggle-theme:hover {
-      background: var(--azul);
-      color: #fff;
+    header img {
+      max-width: 130px;
+      margin-bottom: 15px;
     }
 
     .menu {
@@ -76,113 +60,133 @@
       margin: auto;
     }
 
-    .grid {
+    h2 {
+      text-align: center;
+      color: var(--azul);
+      margin-bottom: 40px;
+    }
+
+    .portfolio {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
     }
 
-    .card {
+    .item-portfolio {
       background: #fff;
-      border-radius: 18px;
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .card:hover {
+    .item-portfolio:hover {
       transform: translateY(-6px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     }
 
-    .card img {
+    .item-portfolio img {
       width: 100%;
-      aspect-ratio: 1/1;
-      object-fit: cover;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      background: #000;
     }
 
-    .card .info {
+    .specs-box {
+      padding: 18px;
+    }
+
+    .specs {
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .specs li {
+      margin-bottom: 6px;
+    }
+
+    .specs strong {
+      color: var(--azul);
+    }
+
+    .btn-whatsapp {
+      display: inline-block;
+      margin-top: 15px;
+      background: var(--azul);
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1565c0;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: var(--preto);
+      color: #fff;
+      text-align: center;
       padding: 20px;
-    }
-
-    .card ul {
-      padding-left: 18px;
-    }
-
-    body.dark {
-      --preto: #f5f5f5;
-      --cinza: #0f172a;
-      background: var(--cinza);
-      color: var(--preto);
-    }
-
-    body.dark header,
-    body.dark .card {
-      background: #020617;
-    }
-
-    body.dark .menu a {
-      color: #e5e7eb;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <button class="toggle-theme" onclick="toggleTheme()">🌙</button>
+  <img src="logo.png" alt="GLVTECH Logo">
   <nav class="menu">
     <a href="index.html">Home</a>
     <a href="portfolio.html" class="active">Portfólio</a>
-    <a href="contato.html">Contato</a>
+    <a href="index.html#contato">Contato</a>
   </nav>
 </header>
 
 <section>
-  <div class="grid">
-    <div class="card">
-      <img src="pcgamer1.jpeg" alt="PC Gamer 1">
-      <div class="info">
-        <ul>
-          <li>Ryzen 5 5500</li>
-          <li>RTX 3060 12GB</li>
-          <li>32GB RAM</li>
-          <li>SSD NVMe</li>
+  <h2>Portfólio de PCs</h2>
+
+  <div class="portfolio">
+    <div class="item-portfolio">
+      <img src="imagens/pcgamer1.jpeg" alt="PC Gamer GLVTECH">
+      <div class="specs-box">
+        <ul class="specs">
+          <li><strong>Processador:</strong> Ryzen 5 5500</li>
+          <li><strong>Placa de Vídeo:</strong> RTX 3060 12GB</li>
+          <li><strong>Placa-mãe:</strong> MSI A520M-A PRO</li>
+          <li><strong>Memória:</strong> 32GB DDR4</li>
+          <li><strong>Armazenamento:</strong> SSD NVMe 256GB</li>
+          <li><strong>Fonte:</strong> Corsair CV650</li>
+          <li><strong>Gabinete:</strong> Hayom Aquario</li>
         </ul>
+        <a class="btn-whatsapp" href="https://wa.me/5511940857403" target="_blank">Solicitar orçamento</a>
       </div>
     </div>
 
-    <div class="card">
-      <img src="pcgamer2.jpeg" alt="PC Gamer 2">
-      <div class="info">
-        <ul>
-          <li>Ryzen 7 9700X</li>
-          <li>RX 9070XT</li>
-          <li>32GB RAM</li>
-          <li>SSD 2TB</li>
+    <div class="item-portfolio">
+      <img src="imagens/pcgamer2.jpeg" alt="PC Gamer GLVTECH">
+      <div class="specs-box">
+        <ul class="specs">
+          <li><strong>Processador:</strong> Ryzen 7 9700X</li>
+          <li><strong>Placa de Vídeo:</strong> RX 9070 XT</li>
+          <li><strong>Placa-mãe:</strong> ASRock X870 Pro RS WiFi</li>
+          <li><strong>Memória:</strong> 32GB DDR5</li>
+          <li><strong>Armazenamento:</strong> SSD NVMe 2TB</li>
+          <li><strong>Fonte:</strong> Cooler Master 850W Gold</li>
+          <li><strong>Water Cooler:</strong> 360mm</li>
         </ul>
+        <a class="btn-whatsapp" href="https://wa.me/5511940857403" target="_blank">Solicitar orçamento</a>
       </div>
     </div>
   </div>
 </section>
 
-<script>
-  function toggleTheme() {
-    const body = document.body;
-    body.classList.toggle('dark');
-
-    const isDark = body.classList.contains('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    document.querySelector('.toggle-theme').textContent = isDark ? '☀️' : '🌙';
-  }
-
-  (function () {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark');
-      document.querySelector('.toggle-theme').textContent = '☀️';
-    }
-  })();
-</script>
+<footer>
+  © 2026 GLVTECH — Todos os direitos reservados
+</footer>
 
 </body>
 </html>
