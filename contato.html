@@ -22,17 +22,34 @@
     body {
       background: var(--cinza);
       color: var(--preto);
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     header {
       background: #fff;
       padding: 40px 20px 25px;
       text-align: center;
+      position: relative;
     }
 
-    header img {
-      max-width: 130px;
-      margin-bottom: 15px;
+    .toggle-theme {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: 2px solid var(--azul);
+      color: var(--azul);
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .toggle-theme:hover {
+      background: var(--azul);
+      color: #fff;
     }
 
     .menu {
@@ -115,12 +132,29 @@
       font-size: 0.9rem;
       margin-top: 60px;
     }
+
+    /* DARK MODE */
+    body.dark {
+      --preto: #f5f5f5;
+      --cinza: #0f172a;
+      background: var(--cinza);
+      color: var(--preto);
+    }
+
+    body.dark header,
+    body.dark form {
+      background: #020617;
+    }
+
+    body.dark .menu a {
+      color: #e5e7eb;
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="logo.png" alt="GLVTECH Logo">
+  <button class="toggle-theme" onclick="toggleTheme()">🌙</button>
   <nav class="menu">
     <a href="index.html">Home</a>
     <a href="portfolio.html">Portfólio</a>
@@ -153,16 +187,28 @@
 </footer>
 
 <script>
+  function toggleTheme() {
+    document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    document.querySelector('.toggle-theme').textContent = isDark ? '☀️' : '🌙';
+  }
+
   function enviarWhatsApp(e) {
     e.preventDefault();
     const servico = document.getElementById('servico').value;
     const descricao = document.getElementById('descricao').value;
 
     const mensagem = `Olá! Gostaria de um orçamento.%0A%0AServiço: ${servico}%0ADescrição: ${descricao}`;
-    const url = `https://wa.me/5511940857403?text=${mensagem}`;
-
-    window.open(url, '_blank');
+    window.open(`https://wa.me/5511940857403?text=${mensagem}`, '_blank');
   }
+
+  (function () {
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      document.querySelector('.toggle-theme').textContent = '☀️';
+    }
+  })();
 </script>
 
 </body>
