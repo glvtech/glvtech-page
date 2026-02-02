@@ -100,6 +100,13 @@
       box-shadow: 0 5px 20px rgba(0,0,0,0.06);
       display: flex;
       flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .item-portfolio:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
     }
 
     .item-portfolio img {
@@ -113,6 +120,25 @@
 
     .specs-box {
       padding: 18px;
+    }
+
+    .btn-whatsapp {
+      display: inline-block;
+      margin-top: 15px;
+      background: var(--azul);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1565c0;
+      transform: scale(1.05);
+    }
     }
 
     .specs-box h3 {
@@ -164,10 +190,33 @@
       margin-top: 15px;
       background: var(--azul);
       color: #fff;
-      padding: 12px 25px;
+      padding: 14px 30px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: 600;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .contato a:hover {
+      background: #1565c0;
+      transform: scale(1.05);
+    }
+
+    .menu {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: var(--preto);
+      font-weight: 600;
+    }
+
+    .menu a:hover {
+      color: var(--azul);
     }
 
     footer {
@@ -185,6 +234,12 @@
     <img src="logo.png" alt="GLVTECH Logo">
     <h1>GLVTECH</h1>
     <p>Montagem e manutenção de computadores com qualidade e confiança</p>
+
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfólio</a>
+      <a href="#contato">Contato</a>
+    </nav>
   </header>
 
   <section class="sobre">
@@ -192,64 +247,9 @@
     <p>A GLVTECH atua com montagem de computadores e manutenção preventiva e corretiva, oferecendo soluções personalizadas para quem busca desempenho, segurança e cuidado com o equipamento.</p>
   </section>
 
-  <section>
-    <h2 class="titulo">Serviços</h2>
-    <div class="servicos">
-      <div class="card">
-        <h3>Montagem de PCs</h3>
-        <p>Computadores gamer, escritório ou uso pessoal, montados de acordo com sua necessidade.</p>
-      </div>
-      <div class="card">
-        <h3>Manutenção Preventiva</h3>
-        <p>Limpeza interna, troca de pasta térmica, organização e otimização do sistema.</p>
-      </div>
-      <div class="card">
-        <h3>Manutenção Corretiva</h3>
-        <p>Diagnóstico e reparo de problemas em hardware e software.</p>
-      </div>
-    </div>
-  </section>
+  
 
-  <section>
-    <h2 class="titulo">Portfólio</h2>
-    <div class="portfolio">
-      <div class="item-portfolio">
-        <img src="imagens/pcgamer1.jpeg" alt="PC Gamer montado pela GLVTECH">
-        <div class="specs-box">
-          <h3>Configuração</h3>
-          <ul class="specs">
-            <li><strong>Processador:</strong> AMD Ryzen 5 5500</li>
-            <li><strong>Placa de Vídeo:</strong> RTX 3060 12GB Gainward Ghost</li>
-            <li><strong>Placa-mãe:</strong> MSI A520M-A PRO</li>
-            <li><strong>Memória:</strong> 2x16GB Crucial 2666MHz</li>
-            <li><strong>Armazenamento:</strong> SSD NVMe 256GB</li>
-            <li><strong>Fonte:</strong> Corsair CV650</li>
-            <li><strong>Gabinete:</strong> Hayom Aquario</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="item-portfolio">
-        <img src="imagens/pcgamer2.jpeg" alt="PC Gamer montado pela GLVTECH">
-        <div class="specs-box">
-          <h3>Configuração</h3>
-          <ul class="specs">
-            <li><strong>Processador:</strong> AMD Ryzen 7 9700X</li>
-            <li><strong>Placa de Vídeo:</strong> ASRock Steel Legend Radeon RX 9070 XT</li>
-            <li><strong>Placa-mãe:</strong> ASRock X870 Pro RS WiFi</li>
-            <li><strong>Memória:</strong> 2x16GB Kingston Fury Renegade 8000 MT/s</li>
-            <li><strong>Armazenamento:</strong> Kingston NV3 2TB</li>
-            <li><strong>Fonte:</strong> Cooler Master MWE Gold 850 V3 (850W)</li>
-            <li><strong>Gabinete:</strong> Rise Mode Galaxy Standard V2</li>
-            <li><strong>Water Cooler:</strong> Aura Ice 360mm</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    </div>
-  </section>
-
-  <section class="contato">
+  <section id="contato" class="contato">
     <h2 class="titulo">Contato</h2>
     <p>Atendimento via WhatsApp ou e-mail</p>
     <a href="https://wa.me/5511940857403" target="_blank">Falar no WhatsApp</a>
