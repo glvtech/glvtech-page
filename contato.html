@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Solicite orçamento de montagem ou manutenção de computadores em São Paulo e Grande SP. Atendimento humanizado e contato direto via WhatsApp.">
-  <title>GLVTECH | Orçamento de Montagem e Manutenção de PC em São Paulo</title>
+  <title>GLVTECH | Contato</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -116,6 +115,40 @@
       font-size: 0.9rem;
       margin-top: 60px;
     }
+
+    /* ====== SIGA-NOS ====== */
+.social {
+  text-align: center;
+  margin: 40px auto 0;
+}
+
+.social h3 {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  color: var(--preto);
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--preto);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social a img {
+  width: 18px;
+  height: 18px;
+}
+
+.social a:hover {
+  color: var(--azul);
+  transform: translateX(4px);
+}
   </style>
 </head>
 <body>
@@ -131,12 +164,7 @@
 
 <section>
   <h2>Solicitar Orçamento</h2>
-  
-<p style="text-align:center; margin-bottom:20px">
-  Atendimento em <strong>São Paulo e Grande SP</strong>.
-  Preencha o formulário abaixo e fale direto pelo WhatsApp.
-</p>
-  
+
   <form onsubmit="enviarWhatsApp(event)">
     <label for="servico">Tipo de serviço</label>
     <select id="servico" required>
@@ -144,7 +172,6 @@
       <option value="Montagem de PC">Montagem de PC</option>
       <option value="Manutenção Preventiva">Manutenção Preventiva</option>
       <option value="Manutenção Corretiva">Manutenção Corretiva</option>
-      <option value="Consultoria Para Compra de Peças">Consultoria Para Compra de Peças</option>
       <option value="Outro">Outro</option>
     </select>
 
@@ -153,6 +180,17 @@
 
     <button type="submit">Enviar para WhatsApp</button>
   </form>
+</section>
+
+<section class="social">
+  <h3>SIGA-NOS</h3>
+
+  <a href="https://www.instagram.com/glvtec/"
+     target="_blank"
+     aria-label="Instagram da GLVTECH">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="">
+    Instagram
+  </a>
 </section>
 
 <footer>
